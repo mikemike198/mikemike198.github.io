@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Pagamento </title>
+    <link href="../MAS/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../MAS/Content/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">NutriLink</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active"  href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cliente.html">Cliente</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Estafeta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="parceiro.html">Estabelecimento</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <!-- Escolher método -->
+    <div class="container">
+        <div class="row" >
+            <div col-sm-6 col-md-4 style="margin: auto;">
+                <button class="btn btn-secondary" id="mbWay"> MB Way </button>
+            </div>
+            <div col-sm-6 col-md-4 style="margin: auto;">
+                <button class="btn btn-secondary" id="cartao"> Cartão de crédito </button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- Dados MB Way -->
+    <div class="container" >
+        <form action="" id="dadosMbWay">
+            <div class="form-group col-4" style="margin: auto;">
+                <label for="" style="text-align: center;">Informações</label>
+                <br>
+                <input type="tel" name="telemovel" id="telemovel" class="form-control" placeholder="Número de telemóvel" aria-describedby="helpId">
+            </div>
+            <br>
+            <div class="form-group col-4" style="margin: auto;">
+                <label for="" style="text-align: center;">Dados da fatura</label>
+                <br>
+                <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome completo" aria-describedby="helpId">
+                <input type="text" name="morada" id="morada" class="form-control" placeholder="Morada" aria-describedby="helpId">
+                <div class="row">
+                    <div class="col">
+                        <input type="text" name="zipcode" id="zipcode" class="form-control" placeholder="Código postal" aria-describedby="helpId">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Localidade">
+                    </div>
+                </div>               
+            </div>
+        </form>       
+    </div>
+
+    <!-- Dados cartão -->
+    <div class="container" >
+        <form action="" id="dadosCartao" class="d-none">
+            <div class="form-group col-4" style="margin: auto;">
+                <label for="" style="text-align: center;">Dados do cartão</label>
+                <br>
+                <input type="number" name="cartao" id="cartao" class="form-control" placeholder="Número do cartão" aria-describedby="helpId">
+                <div class="row">
+                    <div class="col">
+                        <input type="number" name="validade" id="validade" class="form-control" placeholder="Validade do cartão" aria-describedby="helpId">
+                    </div>
+                    <div class="col">
+                        <input type="number" name="cvv" id="cvv" class="form-control" placeholder="CVV" aria-describedby="helpId">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="form-group col-4" style="margin: auto;">
+                <label for="" style="text-align: center;">Dados da fatura</label>
+                <br>
+                <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome completo" aria-describedby="helpId">
+                <input type="text" name="morada" id="morada" class="form-control" placeholder="Morada" aria-describedby="helpId">
+                <div class="row">
+                    <div class="col">
+                        <input type="text" name="zipcode" id="zipcode" class="form-control" placeholder="Código postal" aria-describedby="helpId">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Localidade">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <br>
+    <div class="col-4" style="margin: auto;">
+        <button type="button" class="btn btn-secondary" id="limpar"> Limpar </button>
+        <a href="carrinho.html"><button type="button" class="btn btn-dark" id="confirmar">Confirmar</button></a>
+    </div>
+
+    <!-- Footer -->
+    <div class="navbar navbar-dark bg-dark fixed-bottom" role="navigation">
+        <div class="container">
+            <div class="navbar-text small">&copy;Modelação e Análise de Sistemas - 2020</div>
+            <div class="navbar-right navbar-text small d-none d-md-block">
+                <a href="http://www.ua.pt" title="Universidade de Aveiro">Universidade de Aveiro</a>
+            </div>
+        </div>
+    </div>  
+
+    <script src="../MAS/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="../MAS/Scripts/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready( function(){
+            $("#mbWay").click(function(){
+                $("#dadosMbWay").removeClass("d-none");
+                $("#dadosCartao").addClass("d-none");
+            });
+
+            $("#cartao").click(function(){
+                $("#dadosMbWay").addClass("d-none");
+                $("#dadosCartao").removeClass("d-none");
+            });
+
+            $('button#limpar').click( function() {
+                $('#dadosCartao').each( function() {
+                    this.reset();
+                });
+                $('#dadosMbWay').each( function() {
+                    this.reset();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

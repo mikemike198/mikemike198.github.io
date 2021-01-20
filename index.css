@@ -1,0 +1,30 @@
+body {
+    background-color: #FAEBD7;
+}
+
+#carousel {
+    max-width: 100%;
+    max-height: 600px;
+}
+
+.carousel-item img {
+    max-width: 1400px;
+    max-height: 600px;
+    width: auto;
+    height: auto;
+}
+
+
+
+.input-group-text {
+    width: 40px;
+    align-items: center;
+}
+
+.nav-link{
+    color: black;
+}
+
+.card-img-top {
+    height: 200px;
+}
