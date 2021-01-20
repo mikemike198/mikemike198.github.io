@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Ementa Salada+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="index.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">NutriLink</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cliente.html">Cliente</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="estafeta.html">Estafeta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="parceiro.html">Estabelecimento</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <div class="container">
+        <form action="">
+            <div class="row">
+                <div class="col-md-1 offset-6 text-right"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></div>
+                <div class="col-md-1 text-right"><span class="form-control" id="quantidades" title="Quantidade total de produtos">0</span></div>
+                <div class="col-md-2 text-right"><span class="form-control" id="total" title="Preço total da compra">0.00</span></div>
+                <div class="col-md-2 text-right">
+                    <a href="pagamento.html"><button type="button" class="btn btn-dark" onclick="return validar()" title="Enviar pedido"><i class="fa fa-send"></i></button></a>
+                    <button type="button" class="btn btn-secondary" onclick="limpar()" title="Limpar compra"><i class="fa fa-trash-o"></i></button>
+                </div>
+            </div>
+            <hr />
+            <h1 class="border-bottom my-3 py-3">Saladas+</h1>
+            <div class="row">
+                <div class="col-3">
+                    <h5>Sumo + Salada base + 3 ing.</h5>
+                    <h6> 5,00€</h6>
+                    <input type="hidden" name="precoproduto1" id="precoproduto1" value="5.00" />
+                    <input type="hidden" name="produto1" id="produto1" value="0" />
+                    <hr />
+                    <button type="button" class="btn btn-secondary btn-block" onclick="comprar(1)"><i class="fa fa-shopping-bag"></i> Comprar</button>
+                </div>
+                <div class="col-3">
+                    <h5>Sumo + Salada base + 5 ing.</h5>
+                    <h6>6,50€</h6>
+                    <input type="hidden" name="precoproduto2" id="precoproduto2" value="6.50" />
+                    <input type="hidden" name="produto2" id="produto2" value="0" />
+                    <hr />
+                    <button type="button" class="btn btn-secondary btn-block" onclick="comprar(2)"><i class="fa fa-shopping-bag"></i> Comprar</button>
+                </div>
+                <div class="col-3">
+                    <h5>Sumo + Sandes base + 3 ing.</h5>
+                    <h6>7,00€</h6>
+                    <input type="hidden" name="precoproduto3" id="precoproduto3" value="7.00" />
+                    <input type="hidden" name="produto3" id="produto3" value="0" />
+                    <hr />
+                    <button type="button" class="btn btn-secondary btn-block" onclick="comprar(3)"><i class="fa fa-shopping-bag"></i> Comprar</button>
+                </div>
+                <div class="col-3">
+                    <h5>Sumo + Sandes base + 5 ing.</h5>
+                    <h6>8,50€</h6>
+                    <input type="hidden" name="precoproduto4" id="precoproduto4" value="8.50" />
+                    <input type="hidden" name="produto4" id="produto4" value="0" />
+                    <hr />
+                    <button type="button" class="btn btn-secondary btn-block" onclick="comprar(4)"><i class="fa fa-shopping-bag"></i> Comprar</button>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-3">
+                    <h5>Sumo + Fatia de quiche + 3 ing.</h5>
+                    <h6>8,50€</h6>
+                    <input type="hidden" name="precoproduto5" id="precoproduto5" value="8.50" />
+                    <input type="hidden" name="produto5" id="produto5" value="0" />
+                    <hr />
+                    <button type="button" class="btn btn-secondary btn-block" onclick="comprar(5)"><i class="fa fa-shopping-bag"></i> Comprar</button>
+                </div>
+                <div class="col-3">
+                    <h5>Sumo + Fatia de quiche + 5 ing.</h5>
+                    <h6>10,00€</h6>
+                    <input type="hidden" name="precoproduto6" id="precoproduto6" value="10.00" />
+                    <input type="hidden" name="produto6" id="produto6" value="0" />
+                    <hr />
+                    <button type="button" class="btn btn-secondary btn-block" onclick="comprar(6)"><i class="fa fa-shopping-bag"></i> Comprar</button>
+                </div>
+                <div class="col-3">
+                    <h5>Queque</h5><br>
+                    <h6>1,50€</h6>
+                    <input type="hidden" name="precoproduto7" id="precoproduto7" value="1.50" />
+                    <input type="hidden" name="produto7" id="produto7" value="0" />
+                    <hr />
+                    <button type="button" class="btn btn-secondary btn-block" onclick="comprar(7)"><i class="fa fa-shopping-bag"></i> Comprar</button>
+                </div>
+                <div class="col-3">
+                    <h5>Salada de fruta</h5><br>
+                    <h6>1,50€</h6>
+                    <input type="hidden" name="precoproduto8" id="precoproduto8" value="1.50" />
+                    <input type="hidden" name="produto8" id="produto8" value="0" />
+                    <hr />
+                    <button type="button" class="btn btn-secondary btn-block" onclick="comprar(8)"><i class="fa fa-shopping-bag"></i> Comprar</button>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-3">
+                    <h5>Delícia</h5>
+                    <h6>1,50€</h6>
+                    <input type="hidden" name="precoproduto9" id="precoproduto9" value="1.50" />
+                    <input type="hidden" name="produto9" id="produto9" value="0" />
+                    <hr />
+                    <button type="button" class="btn btn-secondary btn-block" onclick="comprar(9)"><i class="fa fa-shopping-bag"></i> Comprar</button>
+                </div>
+                <div class="col-3">
+                    <h5>Fatia de bolo</h5>
+                    <h6>1,50€</h6>
+                    <input type="hidden" name="precoproduto10" id="precoproduto10" value="1.50" />
+                    <input type="hidden" name="produto10" id="produto10" value="0" />
+                    <hr />
+                    <button type="button" class="btn btn-secondary btn-block" onclick="comprar(10)"><i class="fa fa-shopping-bag"></i> Comprar</button>
+                </div>
+                <div class="col-3">
+                    <h5>Waffre</h5>
+                    <h6>4,50€</h6>
+                    <input type="hidden" name="precoproduto11" id="precoproduto11" value="4.50" />
+                    <input type="hidden" name="produto11" id="produto11" value="0" />
+                    <hr />
+                    <button type="button" class="btn btn-secondary btn-block" onclick="comprar(11)"><i class="fa fa-shopping-bag"></i> Comprar</button>
+                </div>
+                <div class="col-3">
+                    <h5>Queque de laranja</h5>
+                    <h6>1,50€</h6>
+                    <input type="hidden" name="precoproduto12" id="precoproduto12" value="1.50" />
+                    <input type="hidden" name="produto12" id="produto12" value="0" />
+                    <hr />
+                    <button type="button" class="btn btn-secondary btn-block" onclick="comprar(12)"><i class="fa fa-shopping-bag"></i> Comprar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+<br>
+    <!-- Footer -->
+    <div class="navbar navbar-dark bg-dark" role="navigation">
+        <div class="container">
+            <div class="navbar-text small">&copy;Modelação e Análise de Sistemas - 2020</div>
+            <div class="navbar-right navbar-text small d-none d-md-block">
+                <a href="http://www.ua.pt" title="Universidade de Aveiro">Universidade de Aveiro</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="ementa.js"></script>
+</body>
+</html>
